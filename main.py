@@ -20,12 +20,13 @@ async def read_root(request: Request):
     container_id = os.getenv("HOSTNAME", hostname)
     # 요청 정보를 포함하는 딕셔너리를 반환합니다.
     return {
-       "hostname"    : container_id,                 # 컨테이너의 호스트명 (ID)
+        "hostname"    : container_id,                 # 컨테이너의 호스트명 (ID)
         "ip_address"  : request.client.host,          # 요청을 보낸 클라이언트의 IP 주소
         "headers"     : dict(request.headers),        # 모든 HTTP 헤더
         "method"      : request.method,               # HTTP 요청 메서드 (GET, POST 등)
         "path"        : request.url.path,             # 요청 경로
         "query_params": dict(request.query_params),   # 쿼리 파라미터
+        "user_name"   : "cona",                       # 사용자 이름 (예시로 cona 사용)
         "message"     : f"Hello from {container_id}!" # 환영 메시지
     }
 
