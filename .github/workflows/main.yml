@@ -15,7 +15,7 @@ jobs:
         run: docker build -t conakr/my-fastapi-whoami:latest .
       
       - name: docker hub에 로그인을 한다
-        run: docker login -u conakr -p ${{ secrets.DOCKER_PASSWORD }}
+        run: docker login -u conakr -p 
 
       - name: 생성된 이미지를 docker hub에 push 한다
         run: docker push conakr/my-fastapi-whoami:latest
