@@ -29,7 +29,7 @@ jobs:
       #   run: docker service rm my-fastapi-whoami-app
 
       - name: docker hub에 로그인을 한다
-        run: docker login -u conakr -p ${{ secrets.DOCKER_HUB_PASSWORD }}
+        run: docker login -u conakr -p 
 
       - name: 생성된 이미지를 docker hub에 pull로 내려 받는다
         run: docker pull conakr/my-fastapi-whoami:latest
